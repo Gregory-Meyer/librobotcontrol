@@ -1,0 +1,12 @@
+get_filename_component(RobotControl_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+
+list(APPEND CMAKE_MODULE_PATH ${RobotControl_CMAKE_DIR})
+find_dependency(Threads::Threads REQUIRED)
+list(REMOVE_AT CMAKE_MODULE_PATH -1)
+
+if(NOT TARGET RobotControl::RobotControl)
+    include("${RobotControl_CMAKE_DIR}/RobotControlTargets.cmake")
+endif()
+
+set(RobotControl_LIBRARIES RobotControl::RobotControl)
