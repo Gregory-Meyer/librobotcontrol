@@ -97,6 +97,18 @@ add_executable(rc_calibrate_mag examples/rc_calibrate_mag.c)
 target_compile_features(rc_calibrate_mag PUBLIC c_std_99)
 target_link_libraries(rc_calibrate_mag RobotControl::RobotControl)
 
+add_executable(rc_test_encoders examples/rc_test_encoders.c)
+target_compile_features(rc_test_encoders PUBLIC c_std_99)
+target_link_libraries(rc_test_encoders RobotControl::RobotControl)
+
+add_executable(rc_test_encoders_eqep examples/rc_test_encoders_eqep.c)
+target_compile_features(rc_test_encoders_eqep PUBLIC c_std_99)
+target_link_libraries(rc_test_encoders_eqep RobotControl::RobotControl)
+
+add_executable(rc_test_encoders_pru examples/rc_test_encoders_pru.c)
+target_compile_features(rc_test_encoders_pru PUBLIC c_std_99)
+target_link_libraries(rc_test_encoders_pru RobotControl::RobotControl)
+
 add_executable(rc_test_mpu examples/rc_test_mpu.c)
 target_compile_features(rc_test_mpu PUBLIC c_std_99)
 target_link_libraries(rc_test_mpu RobotControl::RobotControl)
