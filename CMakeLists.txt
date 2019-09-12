@@ -85,6 +85,21 @@ target_include_directories(robotcontrol
 target_link_libraries(robotcontrol PUBLIC m rt Threads::Threads)
 add_library(RobotControl::RobotControl ALIAS robotcontrol)
 
+add_executable(rc_calibrate_accel examples/rc_calibrate_accel.c)
+target_compile_features(rc_calibrate_accel PUBLIC c_std_99)
+target_link_libraries(rc_calibrate_accel RobotControl::RobotControl)
+
+add_executable(rc_calibrate_gyro examples/rc_calibrate_gyro.c)
+target_compile_features(rc_calibrate_gyro PUBLIC c_std_99)
+target_link_libraries(rc_calibrate_gyro RobotControl::RobotControl)
+
+add_executable(rc_calibrate_mag examples/rc_calibrate_mag.c)
+target_compile_features(rc_calibrate_mag PUBLIC c_std_99)
+target_link_libraries(rc_calibrate_mag RobotControl::RobotControl)
+
+add_executable(rc_test_mpu examples/rc_test_mpu.c)
+target_compile_features(rc_test_mpu PUBLIC c_std_99)
+target_link_libraries(rc_test_mpu RobotControl::RobotControl)
 
 ##############################################
 # Installation instructions
